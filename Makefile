@@ -14,10 +14,6 @@ vet: dep ## Run go vet against code.
 dep: ## Get the dependencies.
 	go get -v -d ./...
 
-.PHONY: test-e2e
-test-e2e: fmt vet  ## Run unit-e2e tests.
-	go test $(go list ./... | grep -v /test/) -coverprofile cover.out
-
 .PHONY: test
 test: fmt vet ## Run unit tests.
 	go test ./... -coverprofile cover-unittest.out
