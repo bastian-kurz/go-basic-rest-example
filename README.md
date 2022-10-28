@@ -1,5 +1,5 @@
 # Golang basic REST api example
-
+[![CI](https://github.com/bastian-kurz/go-basic-rest-example/actions/workflows/ci.yml/badge.svg)](https://github.com/bastian-kurz/go-basic-rest-example/actions/workflows/ci.yml)
 
 Is a basic example how you can build a simple REST API in Go with go-chi and zap
 
