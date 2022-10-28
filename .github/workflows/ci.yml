@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -20,6 +20,12 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
+        fetch-depth: 0
 
-    - name: Test
-      run: make test
+    - name: Run Test
+      run: make test-coverage
+
+    - name: Go Coverage Badge
+      uses: tj-actions/coverage-badge-go@v2
+      with:
+        filename: coverage.out

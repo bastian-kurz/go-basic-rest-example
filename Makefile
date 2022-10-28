@@ -16,7 +16,12 @@ dep: ## Get the dependencies.
 
 .PHONY: test
 test: fmt vet ## Run unit tests.
-	go test ./... -coverprofile cover-unittest.out
+	go test ./...
+
+.PHONY: test-coverage
+test-coverage fmt vet: ## Run test with coverage
+	go test -v ./... -covermode=count -coverprofile=coverage.out
+	go tool cover -func=coverage.out -o=coverage.out
 
 .PHONY: build
 build: fmt vet ## Build CLI-Tool binary.
