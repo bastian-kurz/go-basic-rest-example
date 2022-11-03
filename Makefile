@@ -23,6 +23,10 @@ test-coverage fmt vet: ## Run test with coverage
 	go test -v ./... -covermode=count -coverprofile=coverage.out
 	go tool cover -func=coverage.out -o=coverage.out
 
+.PHONY: start
+start: ## Run the app
+	go run cmd/server/main.go
+
 .PHONY: build
 build: fmt vet ## Build CLI-Tool binary.
 	go build -o bin/server cmd/server/main.go && chmod +x bin/server

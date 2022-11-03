@@ -6,4 +6,5 @@ import (
 
 func (s *Server) SetupRoutes() {
 	api.Health(s.mux)
+	api.User(s.mux)
 }

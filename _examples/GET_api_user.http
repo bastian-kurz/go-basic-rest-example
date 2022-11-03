@@ -1,0 +1,10 @@
+## Get specific user
+GET http://localhost:8081/api/user/10
+Accept: application/json
+
+###
+## Get a list of user
+GET http://localhost:8081/api/user
+Accept: application/json
+
+###
