@@ -46,3 +46,45 @@ or
 ```bash
 make start
 ```
+
+## Endpoints
+```bash
+## Get specific user
+GET http://localhost:8081/api/user/10
+Accept: application/json
+
+###
+## Get a list of user
+GET http://localhost:8081/api/user
+Accept: application/json
+
+###
+## Valid Request
+
+POST http://localhost:8081/api/user
+Content-Type: application/json
+
+{
+  "userName": "doe",
+  "email": "john.doe@testsubject.de",
+  "firstName": "John",
+  "lastName": "Doe",
+  "password":"foobar"
+}
+
+###
+## Invalid Request
+
+POST http://localhost:8081/api/user
+Content-Type: application/json
+
+{
+  "userName": "!!",
+  "email": "john.doe@@@testsubject.de",
+  "firstName": "John",
+  "lastName": "Doe13",
+  "password":"foobar"
+}
+
+###
+```
